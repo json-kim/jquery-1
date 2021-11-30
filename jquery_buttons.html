@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>jquery 실습 4</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+        <style>
+            button {
+                width: 30%;
+                height: 100px;
+                font-size: large;
+            }
+            .grey {
+                color: white;
+                background-color: grey;
+                border-color: grey;
+            }
+            .white {
+                color: black;
+                background-color: white;
+                border-color: black;
+            }
+        </style>
+    </head>
+    <body>
+        <button class="sub grey">html</button>
+        <button class="sub grey">css</button>
+        <button class="sub grey">javascript</button>
+
+        <script>
+
+            $(function () {
+    
+                $(".sub").on("click", function () {
+                    $(".sub").attr("class", "sub grey");
+                    $(this).attr("class", "sub white");
+                    console.log($(this));
+                })
+    
+            });
+        </script>
+    </body>
+</html>

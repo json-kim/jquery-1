@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>실습 1</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+        <input type="text" id="value" value="">
+        <button id="input_btn">입력</button>
+
+        <br/>
+
+        <button id="red">빨강</button>
+        <button id="blue">파랑</button>
+        <button id="green">초록</button>
+
+        <div id="text"></div>
+    </body>
+    <script>
+        $(function () {
+
+            $("#input_btn").on("click", function() {
+                let inputText = $("#value").val();
+                if (inputText == "") {
+                    alert("텍스트값을 입력해 주세요");
+                }
+                $("#text").html(inputText);
+            });
+
+            $("#red").on("click", function () {
+                alert("빨강색으로 변경됩니다.");
+                $("#text").css("color", "red");
+            });
+
+            $("#blue").on("click", function () {
+                alert("파랑색으로 변경됩니다.");
+                $("#text").css("color", "blue");
+            });
+
+            $("#green").on("click", function () {
+                alert("초록색으로 변경됩니다.");
+                $("#text").css("color", "green");
+            });
+
+        });
+    </script>
+</html>

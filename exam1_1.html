@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>실습 1</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+        <style>
+            button{
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="text"></div>
+        
+        <button>red</button>
+        <button>blue</button>
+        <button>green</button>
+
+    </body>
+    <script>
+        var text = '';
+        function firstTask() {
+            text = prompt('값을 입력해주세요');
+            if (text == '') {
+                alert('값을 입력해주세요');
+                firstTask();
+            } else {
+                console.log(text);
+                $('#text').text(text);
+                $('button').css('display', 'inline-block')
+            }
+        }
+        $(function () {
+
+            firstTask();
+
+            $('button').on('click', function () {
+                let color = $(this).html();
+                alert(color + ' 로 변경됩니다.');
+                $('#text').css('color', color);
+            });
+        });
+    </script>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>jquery 실습 3</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+        <style>
+            body {
+                text-align: center;
+            }
+            div {
+                text-align: left;
+                display: inline-block;
+                font-size: 20px;
+            }
+            .main {
+                width: 400px;
+                min-height: 500px;
+                padding-bottom: 10px;
+            }
+            .head {
+                width: 400px;
+                min-height: 50px;
+                line-height: 50px;
+                text-indent: 10px;
+                background-color: #3b5998;
+                color: white;
+                border: 1px solid #3b5998;
+            }
+            .body {
+                line-height: 50px;
+                width: 400px;
+                min-height: 450px;
+                background-color: aliceblue;
+                border: 1px solid #ccc;
+                padding-bottom: 10px;
+            }
+            .list {
+                position: relative;
+                left: 10px;
+                width: 380px;
+                margin-top: 20px;
+                background-color: white;
+                text-indent: 10px;
+                border: 1px solid #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="head">기사 등록하기</div>
+            <div class="body" id="news"></div>
+        </div>
+        <br/>
+        <button id="btn">등록하기</button>
+    </body>
+    <script>
+        function input() {
+            let name = prompt('기자의 이름은 무엇인가요?');
+            let text = prompt('기사의 내용은 무엇인가요?');
+
+            $('#news').append('<div class="list">' + name + ' : ' + text + '</div>');
+        }
+        $(function () {
+            $('#btn').on('click', function () {
+                input();
+            });
+        });
+    </script>
+</html>

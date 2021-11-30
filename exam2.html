@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>실습 2</title>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+    </head>
+    <body></body>
+    <script>
+        $(function () {
+            $('body').append('<div class="div1" id="box1">1</div>');
+            $('body').append('<div class="div2" id="box2">2</div>');
+            $('body').append('<div class="div1" id="box3">3</div>');
+            $('body').append('<div class="div2" id="box4">4</div>');
+            $('body').append('<div id="image"><img src="bob.gif"></div>');
+
+            $('div').css(
+                {position: 'absolute', display: 'inline-block', textAlign: 'center'}
+            );
+            $('#image').css({top: '200px', left: '200px'});
+            $('img').css({width: '200px', height: '200px'});
+            $('.div1').css({width: '400px', height: '200px', lineHeight: '200px'});
+            $('.div2').css({width: '200px', height: '400px', lineHeight: '400px'});
+            $('#box1').css({backgroundColor: 'blue', top: '0px', left: '0px'});
+            $('#box2').css({backgroundColor: 'green', top: '0px', left: '400px'});
+            $('#box3').css({backgroundColor: 'purple', top: '400px', left: '200px'});
+            $('#box4').css({backgroundColor: 'red', top: '200px', left: '0px'});
+        });
+    </script>
+</html>
